@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion | BDE Excellence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-img"><img src="Logo BDE Excellence.jpeg" alt="Logo" style="height: 50px;"></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="bde.html">BDE</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="clubs.html">Clubs</a></li>
+                <li><a href="recommandations.html">Recommandations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn-login active">Connexion</a></li> <!-- ICI ! -->
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- ... votre formulaire de connexion ... -->
+    <main class="container">
+        <section class="auth-section">
+            <h1>Se connecter</h1>
+            <p>Email: <b>test@bde.com</b> | MDP: <b>1234</b></p>
+            
+            <form class="login-form">
+                <!-- On donne l'ID "monEmail" pour le retrouver plus tard -->
+                <input type="email" id="monEmail" placeholder="Email universitaire" required>
+                
+                <!-- On donne l'ID "monPass" pour le retrouver plus tard -->
+                <input type="password" id="monPass" placeholder="Mot de passe" required>
+                
+                <!-- Le bouton appelle l'action "maVerification" quand on clique -->
+                <button type="button" onclick="maVerification()" class="btn-main">Entrer</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Voici le "cerveau" qui vérifie si c'est bon -->
+    <script>
+        function maVerification() {
+            // 1. On va chercher ce que l'utilisateur a écrit
+            var emailEcrit = document.getElementById("monEmail").value;
+            var passEcrit = document.getElementById("monPass").value;
+
+            // 2. On vérifie si c'est correct
+            if (emailEcrit == "test@bde.com" && passEcrit == "1234") {
+                // Si OUI, on va vers la page profil
+                window.location.href = "profil.html";
+            } else {
+                // Si NON, on affiche une erreur
+                alert("Email ou mot de passe faux !");
+            }
+        }
+    </script>
+    <footer>
+    <p>&copy; 2025 BDE Parcours d'Excellence - Tous droits réservés</p>
+    <p><small>Site optimisé pour les étudiants de Licence et Master</small></p>
+</footer>
+</body>
+</html>
+
